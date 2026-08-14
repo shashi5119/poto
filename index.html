@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Your Name | IT Student</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fa;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background: #111827;
+            padding: 15px 8%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h2 {
+            color: white;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: #60a5fa;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #111827, #2563eb);
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 750px;
+        }
+
+        .profile {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .hero h3 {
+            font-size: 22px;
+            font-weight: normal;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 17px;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: white;
+            color: #2563eb;
+            padding: 12px 25px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        .btn:hover {
+            background: #e5e7eb;
+        }
+
+        /* Sections */
+        section {
+            padding: 70px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 40px;
+            color: #111827;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        /* About */
+        .about {
+            background: white;
+        }
+
+        .about p {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+            font-size: 17px;
+        }
+
+        /* Skills */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .skill {
+            background: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            font-weight: bold;
+        }
+
+        /* Education */
+        .education {
+            background: #f5f7fa;
+        }
+
+        .education-card {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 5px solid #2563eb;
+            border-radius: 5px;
+        }
+
+        .education-card h3 {
+            color: #2563eb;
+            margin-bottom: 8px;
+        }
+
+        /* Projects */
+        .projects {
+            background: white;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background: #f8fafc;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-card h3 {
+            color: #2563eb;
+            margin-bottom: 10px;
+        }
+
+        .project-card a {
+            display: inline-block;
+            margin-top: 15px;
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Contact */
+        .contact {
+            background: #111827;
+            color: white;
+            text-align: center;
+        }
+
+        .contact .section-title {
+            color: white;
+        }
+
+        .contact p {
+            margin: 10px 0;
+        }
+
+        .contact a {
+            color: #60a5fa;
+            text-decoration: none;
+        }
+
+        /* Footer */
+        footer {
+            background: #030712;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Mobile */
+        @media (max-width: 700px) {
+
+            nav .container {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav ul {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero h3 {
+                font-size: 18px;
+            }
+
+            section {
+                padding: 50px 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <h2>Your Name</h2>
+
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <!-- Replace profile.jpg with your photo -->
+            <img src="profile.jpg" alt="Profile Photo" class="profile">
+
+            <h1>Your Name</h1>
+
+            <h3>B.Tech Information Technology Student</h3>
+
+            <p>
+                Passionate about technology, cloud computing and AI.
+                Currently building my technical skills and projects.
+            </p>
+
+            <a href="#projects" class="btn">View My Projects</a>
+
+            <a href="resume.pdf" class="btn" download>
+                Download Resume
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- About -->
+    <section id="about" class="about">
+
+        <div class="content">
+
+            <h2 class="section-title">About Me</h2>
+
+            <p>
+                I am a B.Tech Information Technology student interested in
+                Cloud Computing, Artificial Intelligence and IT technologies.
+                I enjoy learning new technologies and developing practical
+                projects that solve real-world problems.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Skills -->
+    <section id="skills">
+
+        <div class="content">
+
+            <h2 class="section-title">My Skills</h2>
+
+            <div class="skills-container">
+
+                <div class="skill">Java</div>
+                <div class="skill">HTML</div>
+                <div class="skill">CSS</div>
+                <div class="skill">JavaScript</div>
+                <div class="skill">Python</div>
+                <div class="skill">SQL</div>
+                <div class="skill">Linux</div>
+                <div class="skill">Git & GitHub</div>
+                <div class="skill">Cloud Computing</div>
+                <div class="skill">AI Tools</div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Education -->
+    <section id="education" class="education">
+
+        <div class="content">
+
+            <h2 class="section-title">Education</h2>
+
+            <div class="education-card">
+
+                <h3>B.Tech Information Technology</h3>
+
+                <p>
+                    Your College Name
+                </p>
+
+                <p>
+                    2024 - 2028
+                </p>
+
+            </div>
+
+
+            <div class="education-card">
+
+                <h3>Higher Secondary Education</h3>
+
+                <p>
+                    Your School Name
+                </p>
+
+                <p>
+                    Completed: 2024
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Projects -->
+    <section id="projects" class="projects">
+
+        <div class="content">
+
+            <h2 class="section-title">My Projects</h2>
+
+            <div class="project-grid">
+
+
+                <div class="project-card">
+
+                    <h3>AI Shopping Bill Analyzer</h3>
+
+                    <p>
+                        A web application that analyzes grocery bills using
+                        AI and provides useful information about products,
+                        prices and spending.
+                    </p>
+
+                    <a href="#" target="_blank">
+                        View Project →
+                    </a>
+
+                </div>
+
+
+                <div class="project-card">
+
+                    <h3>Personal Resume Website</h3>
+
+                    <p>
+                        A responsive personal portfolio website created
+                        using HTML and CSS and hosted using GitHub Pages.
+                    </p>
+
+                    <a href="#" target="_blank">
+                        View Project →
+                    </a>
+
+                </div>
+
+
+                <div class="project-card">
+
+                    <h3>Future Project</h3>
+
+                    <p>
+                        Add your next college or personal project here.
+                    </p>
+
+                    <a href="#" target="_blank">
+                        View Project →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+
+        <div class="content">
+
+            <h2 class="section-title">Contact Me</h2>
+
+            <p>
+                📧 Email:
+                <a href="mailto:yourmail@gmail.com">
+                    yourmail@gmail.com
+                </a>
+            </p>
+
+            <p>
+                📱 Phone: +91 XXXXX XXXXX
+            </p>
+
+            <p>
+                💻 GitHub:
+                <a href="https://github.com/" target="_blank">
+                    github.com/yourusername
+                </a>
+            </p>
+
+            <p>
+                🔗 LinkedIn:
+                <a href="#" target="_blank">
+                    LinkedIn Profile
+                </a>
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 Your Name. All Rights Reserved.
+        </p>
+
+    </footer>
+
+</body>
+</html>
